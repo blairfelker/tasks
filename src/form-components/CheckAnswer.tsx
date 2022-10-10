@@ -10,18 +10,17 @@ export function CheckAnswer({
     return (
         <div>
             <h3>Check Answer</h3>
-            <Form.Group role={"textbox"}>
+            <Form.Group>
                 <Form.Label>Answer</Form.Label>
                 <Form.Control
-                    type="number"
+                    type="text"
                     value={answer}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                         setAnswer(event.target.value)
                     }
                 ></Form.Control>
             </Form.Group>
-            {answer === expectedAnswer && "✔️"}
-            {answer !== expectedAnswer && "❌"}
+            {answer === expectedAnswer ? "✔️" : "❌"}
         </div>
     );
 }
