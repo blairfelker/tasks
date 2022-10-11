@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 
 export function MultipleChoiceQuestion({
     options,
@@ -8,13 +9,12 @@ export function MultipleChoiceQuestion({
     expectedAnswer: string;
 }): JSX.Element {
     const [answer, setAnswer] = useState<string>("");
-    /* return (
-        /*<div>
+    return (
+        <div>
             <h3>Multiple Choice Question</h3>
-            <Form.Group role={""}>
+            <Form.Group>
                 <Form.Label>Answer</Form.Label>
                 <Form.Control
-                    type="number"
                     value={answer}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                         setAnswer(event.target.value)
@@ -22,5 +22,5 @@ export function MultipleChoiceQuestion({
                 ></Form.Control>
             </Form.Group>
         </div>
-    );*/
+    );
 }

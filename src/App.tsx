@@ -29,10 +29,14 @@ function App(): JSX.Element {
             <hr></hr>
             <EditMode></EditMode>
             <hr></hr>
+            <MultipleChoiceQuestion
+                options={["a", "b", "c"]}
+                expectedAnswer="b"
+            ></MultipleChoiceQuestion>
             <hr></hr>
             <ChangeColor></ChangeColor>
             <hr></hr>
-            {<DoubleHalf></DoubleHalf>}
+            <DoubleHalf></DoubleHalf>
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
