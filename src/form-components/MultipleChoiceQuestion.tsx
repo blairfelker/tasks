@@ -8,19 +8,22 @@ export function MultipleChoiceQuestion({
     options: string[];
     expectedAnswer: string;
 }): JSX.Element {
-    const [answer, setAnswer] = useState<string>("");
+    const [answer, setAnswer] = useState<string>(options[0]);
     return (
         <div>
             <h3>Multiple Choice Question</h3>
-            <Form.Group>
-                <Form.Label>Answer</Form.Label>
-                <Form.Control
-                    value={answer}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                        setAnswer(event.target.value)
-                    }
-                ></Form.Control>
-            </Form.Group>
+            <Form.Label>Answer</Form.Label>
+            <Form.Select
+                value={answer}
+                onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
+                    setAnswer(event.target.value)
+                }
+            >
+                <option value={options[0]}> {options[0]}</option>
+                <option value={options[1]}> {options[1]}</option>
+                <option value={options[2]}> {options[2]}</option>
+            </Form.Select>
+            {answer === expectedAnswer ? "✔️" : "❌"}
         </div>
     );
 }
